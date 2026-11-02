@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreeBirdsBot — Moped Rental Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+
+  <main class="shell">
+    <header class="brand">
+      <p class="brand-mark">FreeBirdsBot</p>
+      <h1>Ride clearer answers.</h1>
+      <p class="tagline">Ask about hours, mopeds, payments, or rentals — I'll reply in context.</p>
+    </header>
+
+    <section class="chat-panel" aria-label="Chat with FreeBirdsBot">
+      <div class="chat-top">
+        <div class="status">
+          <span class="pulse"></span>
+          Online · Moped rental desk
+        </div>
+      </div>
+
+      <div id="messages" class="messages" role="log" aria-live="polite"></div>
+
+      <div id="suggestions" class="suggestions" aria-label="Suggested questions"></div>
+
+      <form id="chat-form" class="composer" autocomplete="off">
+        <label class="sr-only" for="message-input">Your message</label>
+        <input
+          id="message-input"
+          name="message"
+          type="text"
+          placeholder="Type a message…"
+          maxlength="500"
+          required
+        />
+        <button type="submit" id="send-btn" aria-label="Send message">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M4 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
